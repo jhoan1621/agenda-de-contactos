@@ -37,7 +37,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>Agenda de Contactos</h1>
-        <ThemeToggle />
+        <ThemeToggle/>
       </header>
       
       <main className="app-main">

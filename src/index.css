@@ -15,12 +15,24 @@
   padding: 0;
 }
 
+html.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+html.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: Arial, sans-serif;
+  background-color: inherit;
+  color: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
@@ -35,7 +47,7 @@ h1 {
 h2 {
   font-size: 1.5em;
   margin-bottom: 1rem;
-  color: #555;
+  color: inherit;
 }
 
 button {
@@ -45,4 +57,38 @@ button {
 
 input {
   font-family: inherit;
+}
+
+html.dark input {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border: 1px solid #606060;
+}
+
+html.light input {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+html.dark button {
+  background-color: #333;
+  color: #fff;
+}
+
+html.light button {
+  background-color: #0084ff;
+  color: #fff;
+}
+
+button.theme-toggle {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button.theme-toggle:hover {
+  background: #005bb5;
 }

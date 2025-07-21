@@ -2,10 +2,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: inherit; 
 }
 
 .app-header {
-  background-color: #f0f0f0;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -15,7 +15,7 @@
 
 .app-header h1 {
   margin: 0;
-  color: #333;
+  
 }
 
 .app-main {
@@ -180,3 +180,36 @@
 .theme-toggle:hover {
   background-color: #555;
 }
+
+html.light {
+  background-color: #f0f0f0;
+  color: #1a1a1a;
+}
+
+html.dark {
+  background-color: #121212;
+  color: rgb(255, 255, 255);
+}
+
+
+body, .app {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+
+html.light .form-section,
+html.light .contacts-section {
+  background-color: white;
+  color: black;
+}
+
+
+html.dark .form-section,
+html.dark .contacts-section {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+

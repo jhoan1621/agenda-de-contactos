@@ -15,10 +15,16 @@ function ContactForm({ onSubmit, editingContact, onUpdate, onCancelEdit }: Conta
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
+    if ( phone.length<9 ||phone.length>9) {
+      alert('Por favor ingrese un número valido')
+      return
+    }
+
     if (!name.trim() || !phone.trim()) {
       alert('Por favor complete todos los campos')
       return
     }
+    
 
     onSubmit({ name: name.trim(), phone: phone.trim() })
     setName('')
@@ -41,7 +47,8 @@ function ContactForm({ onSubmit, editingContact, onUpdate, onCancelEdit }: Conta
       <div className="form-group">
         <label htmlFor="phone">Teléfono:</label>
         <input
-          type="tel"
+          type="number"
+          min={0}
           id="phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}

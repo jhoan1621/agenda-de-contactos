@@ -1,13 +1,17 @@
 function ThemeToggle() {
   const handleToggle = () => {
-    console.log('Cambiar tema')
+    const html = document.documentElement
+    const currentTheme = html.classList.contains('dark') ? 'dark' : 'light'
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+    html.classList.remove(currentTheme)
+    html.classList.add(newTheme)
   }
 
   return (
     <button onClick={handleToggle} className="theme-toggle">
-      Tema
+      Cambiar Tema
     </button>
   )
 }
 
-export default ThemeToggle
+export default ThemeToggle 
